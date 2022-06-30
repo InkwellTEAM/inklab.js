@@ -1,5 +1,4 @@
-import { Pythagoras } from "./../../../src/math/geometry/Pythagoras"
-import { Trunc } from "./../../../src/math/utils/Trunc"
+import { Pythagoras, Trunc } from "./../../../src/"
 
 describe("2D Pythagoras", () => {
   test("2D Pythagoras - 1", () => {

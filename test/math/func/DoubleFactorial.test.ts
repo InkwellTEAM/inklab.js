@@ -1,4 +1,4 @@
-import { DoubleFactorial } from "./../../../src/math/func/DoubleFactorial"
+import { DoubleFactorial } from "./../../../src/"
 
 describe("Double factorial", () => {
   test("Double factorial - 1", () => {

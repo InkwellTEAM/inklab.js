@@ -1,12 +1,19 @@
 {
   "name": "inklab.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Inklab.js is newer version of inklab, now in TypeScript!",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
   "scripts": {
     "test": "jest --watchAll",
     "build": "tsc"
+  },
+  "exports": {
+    ".": "./lib/",
+    "./math/utils": "./lib/utils",
+    "./math/geometry": "./lib/geometry",
+    "./math/func": "./lib/func",
+    "./math/complex": "./lib/complex"
   },
   "repository": {
     "type": "git",

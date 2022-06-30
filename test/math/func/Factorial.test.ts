@@ -1,4 +1,4 @@
-import { Factorial } from "./../../../src/math/func/Factorial"
+import { Factorial } from "./../../../src/"
 
 describe("Factorial", () => {
   test("Factorial - 1", () => {

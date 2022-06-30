@@ -1,5 +1,4 @@
-import { Complex } from "./../../../src/math/complex/Complex"
-import { Trunc } from "./../../../src/math/utils/Trunc"
+import { Complex, Trunc } from "./../../../src/"
 
 describe("Complex constructor", () => {
   test("Complex constructor - 1", () => {
