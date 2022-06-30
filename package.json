@@ -1,11 +1,11 @@
 {
   "name": "inklab.js",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Inklab.js is newer version of inklab, now in TypeScript!",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
     "build": "tsc"
   },
   "repository": {
