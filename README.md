@@ -1,5 +1,5 @@
-<center><img src="logo.png" width="200" /></center>
-<h1 align="center">INKLAB.JS</h1>
+<img src="logo.png" width="200" />
+<h1>INKLAB.JS</h1>
 
 [![npm version](https://badge.fury.io/js/inklab.js.svg)](https://badge.fury.io/js/inklab.js)
 
@@ -7,16 +7,16 @@
 
 Installation process:
 
-<code> 
-//By npm<br />
+`
+//By npm  
 npm install inklab.js --save-dev
-<br />
-//By yarn<br />
+
+//By yarn  
 yarn add inklab.js
-<br />
-//By pnpm<br />
+
+//By pnpm  
 pnpm add inklab.js
-</code>
+`
 
 ## First steps
 
@@ -28,8 +28,8 @@ import { Factorial } from 'inklab.js/func'
 console.log(Factorial(5))
 </code>
 
-and run `node .` in terminal.
-Congratulations! Your first steps in inklab.js library!
+and run `node --experimental-specifier-resolution=node .` in terminal.
+Congratulations! Your first code in inklab library!
 
 ## What's next?
 
