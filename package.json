@@ -1,6 +1,6 @@
 {
   "name": "inklab.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Inklab.js is newer version of inklab, now in TypeScript!",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
