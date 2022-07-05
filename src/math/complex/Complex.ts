@@ -43,4 +43,13 @@ export class Complex {
       this.re * comp.im + this.im * comp.re,
     ])
   }
+
+  divBy(comp: ComplexNum): ComplexNum {
+    return new Complex([
+      (this.re * comp.re + this.im * comp.im) /
+        (Math.pow(comp.re, 2) + Math.pow(comp.im, 2)),
+      (this.im * comp.re - this.re * comp.im) /
+        (Math.pow(comp.re, 2) + Math.pow(comp.im, 2)),
+    ])
+  }
 }

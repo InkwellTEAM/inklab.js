@@ -73,3 +73,55 @@ describe("Complex addition", () => {
     expect(c1.add(c2).im).toBe(7778)
   })
 })
+
+describe("Complex multiplication", () => {
+  test("Complex multiplication - 1", () => {
+    const c1 = new Complex([1, 2])
+    const c2 = new Complex([3, 4])
+
+    expect(c1.mulBy(c2).re).toBe(-5)
+    expect(c1.mulBy(c2).im).toBe(10)
+  })
+
+  test("Complex multiplication - 2", () => {
+    const c1 = new Complex([1, 253])
+    const c2 = new Complex([13, 423])
+
+    expect(c1.mulBy(c2).re).toBe(-107006)
+    expect(c1.mulBy(c2).im).toBe(3712)
+  })
+
+  test("Complex multiplication - 3", () => {
+    const c1 = new Complex([12, 23])
+    const c2 = new Complex([53, 89])
+
+    expect(c1.mulBy(c2).re).toBe(-1411)
+    expect(c1.mulBy(c2).im).toBe(2287)
+  })
+
+  test("Complex multiplication - 4", () => {
+    const c1 = new Complex([-45, 22])
+    const c2 = new Complex([37, -64])
+
+    expect(c1.mulBy(c2).re).toBe(-257)
+    expect(c1.mulBy(c2).im).toBe(3694)
+  })
+
+  test("Complex multiplication - 5", () => {
+    const c1 = new Complex([-1, -432])
+    const c2 = new Complex([-324, 1234])
+
+    expect(c1.mulBy(c2).re).toBe(533412)
+    expect(c1.mulBy(c2).im).toBe(138734)
+  })
+})
+
+describe("Complex division", () => {
+  test("Complex division - 1", () => {
+    const c1 = new Complex([-1, -432])
+    const c2 = new Complex([-324, 1234])
+
+    expect(c1.divBy(c2).re).toBe(Trunc(-133191 / 406933, 15))
+    expect(c1.divBy(c2).im).toBe(Trunc(70601 / 813866, 15))
+  })
+})
