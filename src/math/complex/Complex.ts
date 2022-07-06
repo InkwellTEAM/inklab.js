@@ -2,13 +2,6 @@ import { Pythagoras } from "./../geometry/Pythagoras"
 import { Trunc } from "./../utils/Trunc"
 import { Round } from "./../utils/Round"
 
-export interface ComplexNum {
-  re: number
-  im: number
-  r: number
-  theta: number
-}
-
 export class Complex {
   re: number
   im: number
@@ -29,22 +22,22 @@ export class Complex {
     } else throw new Error("Invalid mode")
   }
 
-  add(comp: ComplexNum): ComplexNum {
+  add(comp: Complex): Complex {
     return new Complex([this.re + comp.re, this.im + comp.im])
   }
 
-  sub(comp: ComplexNum): ComplexNum {
+  sub(comp: Complex): Complex {
     return new Complex([this.re - comp.re, this.im - comp.im])
   }
 
-  mulBy(comp: ComplexNum): ComplexNum {
+  mulBy(comp: Complex): Complex {
     return new Complex([
       this.re * comp.re - this.im * comp.im,
       this.re * comp.im + this.im * comp.re,
     ])
   }
 
-  divBy(comp: ComplexNum): ComplexNum {
+  divBy(comp: Complex): Complex {
     return new Complex([
       (this.re * comp.re + this.im * comp.im) /
         (Math.pow(comp.re, 2) + Math.pow(comp.im, 2)),

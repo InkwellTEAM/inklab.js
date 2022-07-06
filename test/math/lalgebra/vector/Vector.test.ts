@@ -1,4 +1,4 @@
-import { Vector, Trunc } from "./../../../src/"
+import { Vector, Trunc } from "./../../../../src"
 
 describe("Vector dimensions", () => {
   test("Vector dimensions - 1", () => {

@@ -1,6 +1,6 @@
 {
   "name": "inklab.js",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Inklab.js is newer version of inklab, now in TypeScript!",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/InkwellTEAM/inklab.git"
+    "url": "git+https://github.com/InkwellTEAM/inklab.js.git"
   },
   "keywords": [
     "inklab",

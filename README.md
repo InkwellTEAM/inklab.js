@@ -23,7 +23,7 @@ pnpm add inklab.js
 Create `index.js` file with code:
 
 <code>
-import { Factorial } from 'inklab.js/func'
+import { Factorial } from 'inklab.js'
 
 console.log(Factorial(5))
 </code>
