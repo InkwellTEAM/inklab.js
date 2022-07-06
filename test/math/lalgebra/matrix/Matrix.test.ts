@@ -343,3 +343,215 @@ describe("Matrix addition", () => {
     expect(m1.add(m2)).toEqual(m3)
   })
 })
+
+describe("Matrix multiplication", () => {
+  test("Matrix multiplication - 1", () => {
+    const m1 = new Matrix([
+      [1, 2],
+      [3, 4],
+    ])
+    const m2 = new Matrix([
+      [5, 6],
+      [7, 8],
+    ])
+
+    const m3 = new Matrix([
+      [23, 34],
+      [31, 46],
+    ])
+
+    expect(m1.mulBy(m2)).toEqual(m3)
+  })
+
+  test("Matrix multiplication - 2", () => {
+    const m1 = new Matrix([
+      [5, 623],
+      [2, -5],
+    ])
+    const m2 = new Matrix([
+      [1, 225],
+      [31, 4],
+    ])
+
+    const m3 = new Matrix([
+      [455, -502],
+      [163, 19293],
+    ])
+
+    expect(m1.mulBy(m2)).toEqual(m3)
+  })
+
+  test("Matrix multiplication - 3", () => {
+    const m1 = new Matrix([
+      [1, 4, 7],
+      [2, 5, 8],
+      [3, 6, 9],
+    ])
+    const m2 = new Matrix([
+      [32, 36, 63],
+      [235, 63, 5],
+      [54, 634, 35],
+    ])
+
+    const m3 = new Matrix([
+      [293, 686, 1079],
+      [376, 1285, 2194],
+      [1427, 3596, 5765],
+    ])
+
+    expect(m1.mulBy(m2)).toEqual(m3)
+  })
+
+  test("Matrix multiplication - 4", () => {
+    const m1 = new Matrix([[6]])
+    const m2 = new Matrix([[2]])
+
+    const m3 = new Matrix([[12]])
+
+    expect(m1.mulBy(m2)).toEqual(m3)
+  })
+
+  test("Matrix multiplication - 5", () => {
+    const m1 = new Matrix([
+      [1, 2, 5],
+      [3, 4, 3],
+    ])
+    const m2 = new Matrix([
+      [5, 6],
+      [7, 8],
+      [8, 9],
+    ])
+
+    const m3 = new Matrix([
+      [23, 34, 43],
+      [31, 46, 59],
+      [35, 52, 67],
+    ])
+
+    expect(m1.mulBy(m2)).toEqual(m3)
+  })
+})
+
+describe("Matrix determinant", () => {
+  test("Matrix determinant - 1", () => {
+    const m1 = new Matrix([
+      [1, 2],
+      [3, 4],
+    ])
+
+    expect(m1.determinant).toBe(-2)
+  })
+
+  test("Matrix determinant - 2", () => {
+    const m1 = new Matrix([[1]])
+
+    expect(m1.determinant).toBe(1)
+  })
+
+  test("Matrix determinant - 3", () => {
+    const m1 = new Matrix([
+      [2, 5, 6],
+      [3, 4, 9],
+      [4, 7, 8],
+    ])
+
+    expect(m1.determinant).toBe(28)
+  })
+
+  test("Matrix determinant - 4", () => {
+    const m1 = new Matrix([
+      [-1, 5, 0],
+      [5, 0, -4],
+      [4, 6, 9],
+    ])
+
+    expect(m1.determinant).toBe(-329)
+  })
+
+  test("Matrix determinant - 5", () => {
+    const m1 = new Matrix([
+      [52, -25],
+      [25, 32],
+    ])
+
+    expect(m1.determinant).toBe(2289)
+  })
+})
+
+describe("Set column", () => {
+  test("Set column - 1", () => {
+    const m1 = new Matrix([
+      [1, 2],
+      [3, 4],
+    ])
+
+    const v1 = new Vector([5, 6])
+
+    const m2 = new Matrix([
+      [5, 2],
+      [6, 4],
+    ])
+
+    expect(m1.setCol(v1, 0)).toEqual(m2)
+  })
+
+  test("Set column - 2", () => {
+    const m1 = new Matrix([
+      [1, 2],
+      [3, 4],
+    ])
+
+    const v1 = new Vector([5, 6])
+
+    const m2 = new Matrix([
+      [1, 5],
+      [3, 6],
+    ])
+
+    expect(m1.setCol(v1, 1)).toEqual(m2)
+  })
+
+  test("Set column - 3", () => {
+    const m1 = new Matrix([
+      [2, 1, 3],
+      [5, 1, 9],
+      [6, 8, 4],
+    ])
+
+    const v1 = new Vector([5, 6, 7])
+
+    const m2 = new Matrix([
+      [2, 5, 3],
+      [5, 6, 9],
+      [6, 7, 4],
+    ])
+
+    expect(m1.setCol(v1, 1)).toEqual(m2)
+  })
+
+  test("Set column - 4", () => {
+    const m1 = new Matrix([
+      [15, 55],
+      [352, 225],
+    ])
+
+    const v1 = new Vector([5, 6])
+
+    const m2 = new Matrix([
+      [5, 55],
+      [6, 225],
+    ])
+
+    expect(m1.setCol(v1, 0)).toEqual(m2)
+  })
+
+  test("Set column - 5", () => {
+    const m1 = new Matrix([[1], [3]])
+
+    const v1 = new Vector([5, 6])
+
+    const m2 = new Matrix([[5], [6]])
+
+    expect(m1.setCol(v1, 0)).toEqual(m2)
+  })
+})

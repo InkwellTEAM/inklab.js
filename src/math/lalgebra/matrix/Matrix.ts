@@ -19,6 +19,28 @@ export class Matrix {
     return this.val
   }
 
+  get determinant(): number {
+    //From StackOverflow, don't touch :D
+
+    const det = (m) =>
+      m.length == 1
+        ? m[0][0]
+        : m.length == 2
+        ? m[0][0] * m[1][1] - m[0][1] * m[1][0]
+        : m[0].reduce(
+            (r, e, i) =>
+              r +
+              (-1) ** (i + 2) *
+                e *
+                det(m.slice(1).map((c) => c.filter((_, j) => i != j))),
+            0
+          )
+
+    if (this.isSquare === true) {
+      return det(this.val)
+    } else throw new Error("Cannot calculate determinant of non-square matrix")
+  }
+
   getValue(x: number, y: number): number {
     return this.val[y][x]
   }
@@ -43,5 +65,47 @@ export class Matrix {
       }
       return new Matrix(fm)
     } else throw new Error("The matrices are not that same size")
+  }
+
+  sub(m: Matrix): Matrix {
+    if (ValidateSize(m, this) === true) {
+      const fm = []
+      for (let n = 0; n < this.area / this.val.length; n++) {
+        fm.push(this.getRow(n).sub(m.getRow(n)).toArray)
+      }
+      return new Matrix(fm)
+    } else throw new Error("The matrices are not that same size")
+  }
+
+  mulBy(m: Matrix): Matrix {
+    const fm = []
+
+    for (let n = 0; n < m.val.length; n++) {
+      const hm = []
+      for (let o = 0; o < this.area / this.val.length; o++) {
+        hm.push(m.getRow(n).dot(this.getCol(o)))
+      }
+      fm.push(hm)
+    }
+
+    return new Matrix(fm)
+  }
+
+  setCol(v: Vector, c: number): Matrix {
+    const fm = []
+
+    for (let k = 0; k < this.val.length; k++) {
+      const hm = []
+      for (let o = 0; o < this.area / this.val.length; o++) {
+        if (o === c) {
+          hm.push(v.val[k])
+        } else {
+          hm.push(this.getValue(o, k))
+        }
+      }
+      fm.push(hm)
+    }
+
+    return new Matrix(fm)
   }
 }
