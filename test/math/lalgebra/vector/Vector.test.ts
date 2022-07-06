@@ -1,4 +1,4 @@
-import { Vector, Trunc } from "./../../../../src"
+import { Vector, Matrix, Trunc } from "./../../../../src"
 
 describe("Vector dimensions", () => {
   test("Vector dimensions - 1", () => {
@@ -172,5 +172,66 @@ describe("Vector dot product", () => {
     const v2 = new Vector([2, 4324, 3])
 
     expect(v1.dot(v2)).toBe(13330)
+  })
+})
+
+describe("Vector multiplied by a matrix", () => {
+  test("Vector multiplied by a matrix - 1", () => {
+    const v = new Vector([1, 2])
+    const m = new Matrix([
+      [1, 2],
+      [3, 4],
+    ])
+
+    const f = new Vector([5, 11])
+
+    expect(v.mulByMatrix(m)).toEqual(f)
+  })
+
+  test("Vector multiplied by a matrix - 2", () => {
+    const v = new Vector([1, 5, 7])
+    const m = new Matrix([
+      [1, 2],
+      [3, 4],
+      [3, 5],
+    ])
+
+    const f = new Vector([11, 23, 28])
+
+    expect(v.mulByMatrix(m)).toEqual(f)
+  })
+
+  test("Vector multiplied by a matrix - 3", () => {
+    const v = new Vector([2, 1, 3])
+    const m = new Matrix([
+      [1, 3, 2],
+      [2, 5, 3],
+      [0, 1, 8],
+    ])
+
+    const f = new Vector([11, 18, 25])
+
+    expect(v.mulByMatrix(m)).toEqual(f)
+  })
+
+  test("Vector multiplied by a matrix - 4", () => {
+    const v = new Vector([1, 2])
+    const m = new Matrix([[1], [3]])
+
+    const f = new Vector([1, 3])
+
+    expect(v.mulByMatrix(m)).toEqual(f)
+  })
+
+  test("Vector multiplied by a matrix - 5", () => {
+    const v = new Vector([1, 2])
+    const m = new Matrix([
+      [0, -1],
+      [1, 0],
+    ])
+
+    const f = new Vector([-2, 1])
+
+    expect(v.mulByMatrix(m)).toEqual(f)
   })
 })

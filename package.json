@@ -1,6 +1,6 @@
 {
   "name": "inklab.js",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Inklab.js is newer version of inklab, now in TypeScript!",
   "types": "./lib/index.d.ts",
   "main": "./lib/index.js",
@@ -36,9 +36,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/InkwellTEAM/inklab/issues"
+    "url": "https://github.com/InkwellTEAM/inklab.js/issues"
   },
-  "homepage": "https://github.com/InkwellTEAM/inklab#readme",
+  "homepage": "https://github.com/InkwellTEAM/inklab.js#readme",
   "devDependencies": {
     "@swc/jest": "^0.2.21",
     "@types/jest": "^28.1.3",
