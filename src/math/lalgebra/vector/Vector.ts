@@ -2,6 +2,7 @@ import { Pythagoras } from "./../../../../src"
 
 export class Vector {
   val: number[]
+
   constructor(vals: number[]) {
     this.val = vals
   }
@@ -12,6 +13,10 @@ export class Vector {
 
   get magnitude(): number {
     return Pythagoras(this.val)
+  }
+
+  get toArray(): number[] {
+    return this.val
   }
 
   add(v: Vector) {
