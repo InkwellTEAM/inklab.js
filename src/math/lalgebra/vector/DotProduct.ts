@@ -1,6 +1,6 @@
 import { Vector } from "./Vector"
 
-export function MassiveDotProduct(v: Vector[]): number {
+export function DotProduct(v: Vector[]): number {
   const vec = []
 
   const bV = Math.max(...v.map((a) => a.dims))

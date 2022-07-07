@@ -439,13 +439,13 @@ describe("Matrix determinant", () => {
       [3, 4],
     ])
 
-    expect(m1.determinant).toBe(-2)
+    expect(m1.det).toBe(-2)
   })
 
   test("Matrix determinant - 2", () => {
     const m1 = new Matrix([[1]])
 
-    expect(m1.determinant).toBe(1)
+    expect(m1.det).toBe(1)
   })
 
   test("Matrix determinant - 3", () => {
@@ -455,7 +455,7 @@ describe("Matrix determinant", () => {
       [4, 7, 8],
     ])
 
-    expect(m1.determinant).toBe(28)
+    expect(m1.det).toBe(28)
   })
 
   test("Matrix determinant - 4", () => {
@@ -465,7 +465,7 @@ describe("Matrix determinant", () => {
       [4, 6, 9],
     ])
 
-    expect(m1.determinant).toBe(-329)
+    expect(m1.det).toBe(-329)
   })
 
   test("Matrix determinant - 5", () => {
@@ -474,7 +474,7 @@ describe("Matrix determinant", () => {
       [25, 32],
     ])
 
-    expect(m1.determinant).toBe(2289)
+    expect(m1.det).toBe(2289)
   })
 })
 
@@ -553,5 +553,80 @@ describe("Set column", () => {
     const m2 = new Matrix([[5], [6]])
 
     expect(m1.setCol(v1, 0)).toEqual(m2)
+  })
+})
+
+describe("Get submatrix", () => {
+  test("Get submatrix - 1", () => {
+    const m1 = new Matrix([
+      [1, 2, 2],
+      [3, 4, 3],
+      [5, 6, 7],
+    ])
+
+    const m2 = new Matrix([
+      [4, 3],
+      [6, 7],
+    ])
+
+    expect(m1.getSubmatrix(0, 0)).toEqual(m2)
+  })
+
+  test("Get submatrix - 2", () => {
+    const m1 = new Matrix([
+      [1, 2],
+      [3, 4],
+    ])
+
+    const m2 = new Matrix([[4]])
+
+    expect(m1.getSubmatrix(0, 0)).toEqual(m2)
+  })
+
+  test("Get submatrix - 3", () => {
+    const m1 = new Matrix([
+      [1, 2, 2],
+      [3, 4, 3],
+      [5, 6, 7],
+    ])
+
+    const m2 = new Matrix([
+      [3, 3],
+      [5, 7],
+    ])
+
+    expect(m1.getSubmatrix(1, 0)).toEqual(m2)
+  })
+
+  test("Get submatrix - 4", () => {
+    const m1 = new Matrix([
+      [1, 2, 2],
+      [3, 4, 3],
+      [5, 6, 7],
+    ])
+
+    const m2 = new Matrix([
+      [1, 2],
+      [5, 7],
+    ])
+
+    expect(m1.getSubmatrix(1, 1)).toEqual(m2)
+  })
+
+  test("Get submatrix - 5", () => {
+    const m1 = new Matrix([
+      [1, 2, 2, 5],
+      [3, 4, 3, 32],
+      [5, 6, 7, 52],
+      [52, 25, 2, 52],
+    ])
+
+    const m2 = new Matrix([
+      [4, 3, 32],
+      [6, 7, 52],
+      [25, 2, 52],
+    ])
+
+    expect(m1.getSubmatrix(0, 0)).toEqual(m2)
   })
 })

@@ -19,10 +19,10 @@ export class Matrix {
     return this.val
   }
 
-  get determinant(): number {
+  get det(): number {
     //From StackOverflow, don't touch :D
 
-    const det = (m) =>
+    const determinant = (m) =>
       m.length == 1
         ? m[0][0]
         : m.length == 2
@@ -32,12 +32,12 @@ export class Matrix {
               r +
               (-1) ** (i + 2) *
                 e *
-                det(m.slice(1).map((c) => c.filter((_, j) => i != j))),
+                determinant(m.slice(1).map((c) => c.filter((_, j) => i != j))),
             0
           )
 
     if (this.isSquare === true) {
-      return det(this.val)
+      return determinant(this.val)
     } else throw new Error("Cannot calculate determinant of non-square matrix")
   }
 
@@ -104,6 +104,24 @@ export class Matrix {
         }
       }
       fm.push(hm)
+    }
+
+    return new Matrix(fm)
+  }
+
+  getSubmatrix(x: number, y: number): Matrix {
+    const fm = []
+
+    for (let n = 0; n < this.val.length; n++) {
+      if (n !== y) {
+        const hm = []
+        for (let i = 0; i < this.area / this.val.length; i++) {
+          if (i !== x) {
+            hm.push(this.getValue(i, n))
+          }
+        }
+        fm.push(hm)
+      }
     }
 
     return new Matrix(fm)
