@@ -7,30 +7,40 @@
 
 Installation process:
 
-`
-//By npm  
+```//By npm
 npm install inklab.js --save-dev
 
-//By yarn  
+//By yarn
 yarn add inklab.js
 
-//By pnpm  
+//By pnpm
 pnpm add inklab.js
-`
+```
 
 ## First steps
 
 Create `index.js` file with code:
 
-<code>
+```
 import { Factorial } from 'inklab.js'
 
 console.log(Factorial(5))
-</code>
+```
 
 and run `node --experimental-specifier-resolution=node .` in terminal.
 Congratulations! Your first code in inklab library!
 
 ## What's next?
 
+### Docs
+
 We will be creating docs as the library evolves.
+
+### Roadmap
+
+We are going to add:
+
+- Matrix inverse algorithm
+- Parser for derivatives of ANY function (calculus)
+- Graph theory functions and classes
+- Physics functions and classes

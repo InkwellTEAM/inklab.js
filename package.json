@@ -14,7 +14,9 @@
     "./math/utils": "./lib/math/utils",
     "./math/geometry": "./lib/math/geometry",
     "./math/func": "./lib/math/func",
-    "./math/complex": "./lib/math/complex"
+    "./math/complex": "./lib/math/complex",
+    "./math/algebra": "./lib/math/algebra",
+    "./math/settheory": "./lib/math/settheory"
   },
   "repository": {
     "type": "git",
