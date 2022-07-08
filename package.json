@@ -11,6 +11,7 @@
   },
   "exports": {
     ".": "./lib/",
+    "./math": "./lib/math",
     "./math/utils": "./lib/math/utils",
     "./math/geometry": "./lib/math/geometry",
     "./math/func": "./lib/math/func",
